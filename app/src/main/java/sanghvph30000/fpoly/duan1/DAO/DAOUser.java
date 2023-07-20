@@ -17,7 +17,6 @@ public class DAOUser {
 
     public DAOUser(Context context) {
         DbHelper dbHelper = new DbHelper(context, "DuAn1", null, 1);
-        database = dbHelper.getReadableDatabase();
         database = dbHelper.getWritableDatabase();
     }
 
@@ -26,7 +25,7 @@ public class DAOUser {
         ContentValues values = new ContentValues();
         values.put("FullName", user.getFullName());
         values.put("Username", user.getUsername());
-        values.put("ChucVu", user.getMaChucVu());
+        values.put("ChucVu",2);
         values.put("Password", user.getPassword());
         values.put("SDT", user.getSDT());
         values.put("NamSinh", user.getNamSinh());

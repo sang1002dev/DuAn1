@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,7 @@ public class DangNhapAct extends AppCompatActivity {
     EditText edtUser, edtPassword;
     ImageView btnLogin, img_hidePassword;
     CheckBox checkBox;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class DangNhapAct extends AppCompatActivity {
         checkBox = findViewById(R.id.chkNhoMK);
         btnLogin = findViewById(R.id.btnDangNhap);
         img_hidePassword = findViewById(R.id.img_hidePassword);
+        textView = findViewById(R.id.tvChuaco);
         daoUser = new DAOUser(this);
         edtPassword.getInputType();
         //sự kiện hide pass
@@ -51,7 +54,13 @@ public class DangNhapAct extends AppCompatActivity {
                 }
             }
         });
-
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DangKyActi.class);
+                startActivity(intent);
+            }
+        });
 //        Get Data từ SharedPreferences
         SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
         String user = pref.getString("USERNAME", "");

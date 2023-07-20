@@ -11,12 +11,18 @@
         android:roundIcon="@drawable/pizza"
         android:supportsRtl="true"
         android:theme="@style/BenBen_BenCS_CE150140">
-
         <activity
-            android:name="sanghvph30000.fpoly.duan1.DangNhapAct"
+            android:name=".DangKyActi"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DangNhapAct"
             android:exported="false" />
         <activity
-            android:name="sanghvph30000.fpoly.duan1.MHChaoAct"
+            android:name=".MHChaoAct"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="sanghvph30000.fpoly.duan1.MainActivity"
+            android:name=".MainActivity"
             android:exported="true" />
     </application>
 
