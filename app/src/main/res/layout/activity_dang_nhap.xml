@@ -14,24 +14,14 @@
         android:orientation="vertical"
         android:padding="25dp">
 
-        <ImageView
-            android:layout_width="348dp"
-            android:layout_height="252dp"
-            android:src="@drawable/img" />
-
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/logophone1"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/ct_font_bold"
-            android:text="FPOLY Mobie"
-            android:textColor="#E91E63"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/ct_font_bold"
             android:text="Đăng nhập"
             android:textColor="@color/purple_200"
@@ -110,22 +100,25 @@
             android:fontFamily="@font/ct_font_regular"
             android:text="Lưu Mật Khẩu"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/purple_700"
             android:layout_marginLeft="120dp"
             android:textSize="10dp" />
         <TextView
             android:id="@+id/tvChuaco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chưa có tài khoản"
+            android:text="Chưa có tài khoản?"
+            android:textColor="@color/red1"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="110dp"/>
 
-        <ImageView
+        <Button
             android:id="@+id/btnDangNhap"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="45dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/btn_dangnhap" />
-
+            android:layout_gravity="center"
+            android:backgroundTint="@color/purple_200"
+            android:text="Đăng nhập"
+            />
     </LinearLayout>
 </LinearLayout>

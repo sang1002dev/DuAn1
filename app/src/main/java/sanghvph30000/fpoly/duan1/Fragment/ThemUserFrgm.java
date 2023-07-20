@@ -25,14 +25,14 @@ import sanghvph30000.fpoly.duan1.DAO.DAOUser;
 import sanghvph30000.fpoly.duan1.Model.User;
 import sanghvph30000.fpoly.duan1.R;
 
-public class ThemNhanVienFrgm extends Fragment {
+public class ThemUserFrgm extends Fragment {
     EditText edtUser, edtName, edtPassword, edtSDT, edtNamSinh, btnAddThemNV, btnHuyThemNV;
     DAOUser daoUser;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_them_nhan_vien_frgm, container, false);
+        View view = inflater.inflate(R.layout.fragment_them_user_frgm, container, false);
         ImageView btnBackThemNV = view.findViewById(R.id.btnBackThemNV);
         btnBackThemNV.setOnClickListener(new View.OnClickListener() {
             @Override

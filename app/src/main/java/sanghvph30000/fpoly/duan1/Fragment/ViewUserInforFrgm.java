@@ -104,7 +104,7 @@ public class ViewUserInforFrgm extends Fragment {
                         boolean kiemtra = daoUser.deleteUser(user.getID_User());
                         if (kiemtra){
                             Toast.makeText(getContext(), "Đã xóa nhân viên!", Toast.LENGTH_SHORT).show();
-                            loadFragment(new TKNhanVienFrgm());
+                            loadFragment(new TKUserFrgm());
                         }
                         dialog.dismiss();
                     }
@@ -117,7 +117,7 @@ public class ViewUserInforFrgm extends Fragment {
         btnBackViewUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new TKNhanVienFrgm());
+                loadFragment(new TKUserFrgm());
             }
         });
         return view;

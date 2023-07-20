@@ -54,7 +54,7 @@
             <TextView
                 style="@style/edt_Label"
                 android:text="Tên Loại"
-                android:textColor="@color/black"
+                android:textColor="@color/purple_200"
                 android:layout_marginLeft="10dp"
                 />
 
@@ -63,7 +63,7 @@
                 style="@style/edt_TextBox2"
                 android:layout_marginTop="5dp"
                 android:hint="Tên Loại"
-                android:textColorHint="@color/black" />
+                />
 
         </LinearLayout>
 

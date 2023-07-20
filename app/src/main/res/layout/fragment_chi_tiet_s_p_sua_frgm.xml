@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_1"
     >
 
     <ScrollView
@@ -27,14 +28,14 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/img" />
+                    android:src="@drawable/img_3" />
 
                 <ImageView
                     android:id="@+id/img_SP1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/img" />
+                    android:src="@drawable/img_3" />
 
             </LinearLayout>
 
@@ -65,7 +66,7 @@
                     android:id="@+id/txtCTSPSuaLoaiSP"
                     style="@style/edt_Label"
                     android:layout_marginLeft="20dp"
-                    android:text="Loại Sản phẩm: Cà phê"
+                    android:text="Loại Sản phẩm: Iphone"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -81,9 +82,9 @@
                     android:id="@+id/txtCTSPSuaMoTaSP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="100dp"
                     android:fontFamily="@font/ct_font_medium"
-                    android:text="Thức uống giúp tỉnh táo tức thì để bắt đầu ngày mới thật hứng khởi. Không đắng khét như cà phê truyền thống, The Coffee House Sữa Đá mang hương vị hài hoà đầy lôi cuốn. Là sự đậm đà của 100% cà phê Arabica Cầu Đất rang vừa tới, biến tấu tinh tế với sữa đặc và kem sữa ngọt ngào cực quyến rũ. Càng hấp dẫn hơn với topping thạch 100% cà phê nguyên chất giúp giữ trọn vị ngon đến ngụm cuối cùng."
+                    android:text="Iphone 14 đẳng cấp thời thượng, vô cùng sang chanhr"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -105,7 +106,7 @@
                     android:backgroundTint="@color/purple_200"
                     android:text="Sửa"
                     android:gravity="center"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textColor="@color/white"
                     android:fontFamily="@font/ct_font_medium"
                     android:textStyle="bold"
@@ -126,7 +127,7 @@
                     android:backgroundTint="@color/purple_200"
                     android:text="Xóa"
                     android:gravity="center"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textColor="@color/white"
                     android:fontFamily="@font/ct_font_medium"
                     android:textStyle="bold"

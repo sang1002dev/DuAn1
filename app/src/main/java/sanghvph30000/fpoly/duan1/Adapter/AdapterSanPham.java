@@ -118,6 +118,8 @@ public class AdapterSanPham extends RecyclerView.Adapter<AdapterSanPham.UserView
         int quyenUser = user.getMaChucVu();
         if (quyenUser == 2) {
             holder.info_sanpham.setVisibility(View.GONE);
+        }else{
+            holder.add_sanpham.setVisibility(View.GONE);
         }
 
         holder.info_sanpham.setOnClickListener(new View.OnClickListener() {

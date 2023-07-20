@@ -40,7 +40,7 @@
                 android:textColor="@color/purple_200"
                 android:textAlignment="center"
                 android:text="Thêm Sản Phẩm"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:fontFamily="@font/ct_font_bold"
                 android:layout_marginRight="30dp"
 
@@ -71,16 +71,16 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Tên Sản Phẩm"
-                    android:textColor="@color/red1"
+                    android:textColor="@color/purple_200"
                     android:layout_marginLeft="10dp"
                     />
 
                 <EditText
                     android:id="@+id/edNameSP"
                     style="@style/edt_TextBox2"
-                    android:hint="Nhập tên Sản Phẩm"
+
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
+
                     />
 
             </LinearLayout>
@@ -94,18 +94,18 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Giá Bán"
-                    android:textColor="@color/red1"
+                    android:textColor="@color/purple_200"
                     android:layout_marginLeft="10dp"
                     />
 
                 <EditText
                     android:id="@+id/edPrice"
                     style="@style/edt_TextBox2"
-                    android:hint="Nhập giá bán"
-                    android:maxLength="7"
+
+                    android:maxLength="10"
                     android:inputType="number"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
+
                     />
 
             </LinearLayout>
@@ -119,16 +119,16 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Loại sản phẩm"
-                    android:textColor="@color/red1"
+                    android:textColor="@color/purple_200"
                     android:layout_marginLeft="10dp"
                     />
 
                 <AutoCompleteTextView
                     android:id="@+id/edtLoaiSP"
                     style="@style/edt_TextBox2"
-                    android:hint="Nhập loại Sản Phẩm"
+
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
+
                     />
 
             </LinearLayout>
@@ -142,16 +142,16 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Mô Tả"
-                    android:textColor="@color/red1"
+                    android:textColor="@color/purple_200"
                     android:layout_marginLeft="10dp"
                     />
 
                 <EditText
                     android:id="@+id/edMoTa"
                     style="@style/edt_TextBox2"
-                    android:hint="Nhập mô tả sản phẩm"
+
+                    android:layout_marginBottom="30dp"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
                     android:lines="2"
                     android:maxLines="2"
                     android:minLines="2"

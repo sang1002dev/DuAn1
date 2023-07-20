@@ -142,6 +142,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/ct_edittext_2"
                 android:gravity="center_vertical"
+                android:layout_marginBottom="50dp"
                 android:orientation="horizontal">
 
                 <EditText
@@ -191,7 +192,7 @@
                 android:paddingBottom="5dp"
                 android:text="Hủy"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <EditText
@@ -210,7 +211,7 @@
                 android:paddingBottom="5dp"
                 android:text="Xác Nhận"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
         </LinearLayout>
 

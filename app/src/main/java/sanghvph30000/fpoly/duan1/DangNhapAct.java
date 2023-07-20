@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,10 +26,10 @@ import sanghvph30000.fpoly.duan1.Model.User;
 public class DangNhapAct extends AppCompatActivity {
     private DAOUser daoUser;
     EditText edtUser, edtPassword;
-    ImageView btnLogin, img_hidePassword;
+    ImageView  img_hidePassword;
     CheckBox checkBox;
     TextView textView;
-
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,7 @@ public class DangNhapAct extends AppCompatActivity {
         edtUser = findViewById(R.id.edtTenDangNhap);
         edtPassword = findViewById(R.id.edtMatKhau);
         checkBox = findViewById(R.id.chkNhoMK);
-        btnLogin = findViewById(R.id.btnDangNhap);
+        button = findViewById(R.id.btnDangNhap);
         img_hidePassword = findViewById(R.id.img_hidePassword);
         textView = findViewById(R.id.tvChuaco);
         daoUser = new DAOUser(this);
@@ -71,7 +72,7 @@ public class DangNhapAct extends AppCompatActivity {
         edtPassword.setText(pass);
         checkBox.setChecked(rem);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String strUser = edtUser.getText().toString();

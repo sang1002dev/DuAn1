@@ -152,7 +152,6 @@ public class StoreFrgm extends Fragment {
                         EditText btnHoaDonHuy = dialog.findViewById(R.id.btnHoaDonHuy);
                         EditText btnHoaDonXN = dialog.findViewById(R.id.btnHoaDonXN);
 
-                        TextView txtHDTenNV = dialog.findViewById(R.id.txtHDTenNV);
                         TextView txtHDTenKH = dialog.findViewById(R.id.txtHDTenKH);
                         TextView txtHDNgayBan = dialog.findViewById(R.id.txtHDNgayBan);
                         RecyclerView recycle_hoaDon = dialog.findViewById(R.id.recycle_hoaDon);
@@ -160,7 +159,7 @@ public class StoreFrgm extends Fragment {
 
 //                    Settext cho các View
 
-                        txtHDTenNV.setText(fullName);
+
                         txtHDTenKH.setText(tenKH);
                         txtHDNgayBan.setText(ngayTaoHD);
                         String outTongTien = String.format("%,.0f", tongTien);
@@ -229,7 +228,7 @@ public class StoreFrgm extends Fragment {
                                             }
                                         }
                                         createData();
-                                        Toast.makeText(getContext(), "Mua hàng thành công!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(), "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
                                         txtGHTongTien.setText("0 VNĐ");
                                         dialog.dismiss();
                                     }

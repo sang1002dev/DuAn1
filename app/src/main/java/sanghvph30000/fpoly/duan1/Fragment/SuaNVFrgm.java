@@ -47,7 +47,7 @@ public class SuaNVFrgm extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sua_n_v_frgm, container, false);
+        View view = inflater.inflate(R.layout.fragment_sua_user_frgm, container, false);
 
 //        Ánh xạ
         edtSuaTenNV = view.findViewById(R.id.edtSuaTenNV);
@@ -139,7 +139,7 @@ public class SuaNVFrgm extends Fragment {
                                     loadFragment(new UserInfoFrgm());
                                 }
                                 else {
-                                    loadFragment(new TKNhanVienFrgm());
+                                    loadFragment(new TKUserFrgm());
                                 }
                             }
                             else {

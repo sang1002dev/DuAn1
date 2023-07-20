@@ -24,7 +24,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bac_xiu"
+                android:src="@drawable/img_3"
                 />
 
         </androidx.cardview.widget.CardView>
@@ -39,7 +39,7 @@
             android:fontFamily="@font/ct_font_medium"
             android:paddingLeft="10dp"
             android:paddingRight="0dp"
-            android:text="Bạc sỉu"
+            android:text="Iphone 13"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
@@ -55,7 +55,7 @@
             android:fontFamily="@font/ct_font_medium"
             android:paddingLeft="10dp"
             android:paddingRight="0dp"
-            android:text="29.000đ"
+            android:text="20.000.000đ"
             android:textColor="@color/black"
             android:textSize="15dp" />
 

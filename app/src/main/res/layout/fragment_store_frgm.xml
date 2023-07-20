@@ -37,7 +37,7 @@
                 android:textColor="@color/purple_200"
                 android:text="Giỏ Hàng"
                 android:gravity="center_horizontal"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:fontFamily="@font/ct_font_bold"
                 />
 
@@ -110,7 +110,7 @@
                     android:layout_width="match_parent"
                     android:text="0 VNĐ"
                     android:textColor="#E91E63"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     />
             </LinearLayout>
@@ -122,7 +122,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/bo_tron_edt"
                 android:textColor="@color/purple_200"
-                android:text="Thanh Toán"
+                android:text="Đặt hàng"
                 android:textSize="22dp"
                 android:gravity="center"
                 android:layout_marginLeft="20dp"

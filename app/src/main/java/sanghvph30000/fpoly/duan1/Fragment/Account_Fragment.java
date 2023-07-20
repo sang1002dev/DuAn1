@@ -87,7 +87,7 @@ public class Account_Fragment extends Fragment {
         userFrgmTKNhanVien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new TKNhanVienFrgm());
+                loadFragment(new TKUserFrgm());
             }
         });
 
@@ -108,7 +108,7 @@ public class Account_Fragment extends Fragment {
         userFrgmThemNhanVien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new ThemNhanVienFrgm());
+                loadFragment(new ThemUserFrgm());
             }
         });
 

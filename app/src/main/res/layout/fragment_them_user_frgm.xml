@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:background="@color/gray2"
+            android:background="@color/card"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             >
@@ -37,7 +37,7 @@
                 android:textColor="@color/purple_200"
                 android:textAlignment="center"
                 android:text="Thêm người dùng"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:fontFamily="@font/ct_font_bold"
                 android:layout_marginRight="30dp"
 
@@ -48,7 +48,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/user_avatar"
+            android:src="@drawable/sang"
             android:layout_marginTop="20dp"
             />
 
@@ -70,7 +70,7 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Họ và tên"
-                    android:textColor="@color/red1"
+                    android:textColor="@color/purple_200"
                     android:layout_marginLeft="10dp"
                     />
 
@@ -78,8 +78,8 @@
                     android:id="@+id/edTenNhanVien"
                     style="@style/edt_TextBox2"
                     android:layout_marginTop="5dp"
-                    android:hint="Họ và tên"
-                    android:textColorHint="@color/black" />
+
+                   />
 
             </LinearLayout>
 
@@ -92,7 +92,7 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Tên đăng nhập"
-                    android:textColor="@color/red1"
+                    android:textColor="@color/purple_200"
                     android:layout_marginLeft="10dp"
                     />
 
@@ -100,8 +100,8 @@
                     android:id="@+id/edUsername"
                     style="@style/edt_TextBox2"
                     android:layout_marginTop="5dp"
-                    android:hint="Tên đăng nhập"
-                    android:textColorHint="@color/black" />
+
+                 />
 
             </LinearLayout>
 
@@ -115,15 +115,14 @@
                     style="@style/edt_Label"
                     android:layout_marginLeft="10dp"
                     android:text="Mật khẩu"
-                    android:textColor="@color/red1" />
+                    android:textColor="@color/purple_200" />
 
                 <EditText
                     android:id="@+id/edPassword"
                     style="@style/edt_TextBox2"
-                    android:hint="Mật khẩu"
+
                     android:inputType="textPassword"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
                     />
 
                 <TextView
@@ -131,32 +130,31 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Số điện thoại"
-                    android:textColor="@color/red1" />
+                    android:textColor="@color/purple_200" />
 
                 <EditText
                     android:id="@+id/edSDT"
                     android:maxLength="10"
                     style="@style/edt_TextBox2"
-                    android:hint="Số điện thoại"
+
                     android:inputType="number"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
                     />
 
                 <TextView
                     style="@style/edt_Label"
                     android:layout_marginLeft="10dp"
                     android:text="Năm sinh"
-                    android:textColor="@color/red1" />
+                    android:textColor="@color/purple_200" />
 
                 <EditText
                     android:id="@+id/edNamSinh"
                     style="@style/edt_TextBox2"
                     android:maxLength="4"
-                    android:hint="Năm sinh"
+
                     android:inputType="number"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
+                   android:layout_marginBottom="30dp"
                     />
 
             </LinearLayout>

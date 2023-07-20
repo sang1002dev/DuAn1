@@ -60,15 +60,15 @@ public class HomeFrgm extends Fragment {
 
         txtHello.setText("Xin chào, " + fullName + "!");
 
-        ArrayList<SanPham> listSanPham = daoSanPham.getAllProduct(0);
-        ArrayList<Integer> listMaSPTop = daoLuuHD.getTopSP();
-        for (int i = 0; i < listMaSPTop.size(); i++) {
-            for (int j = 0; j < listSanPham.size(); j++) {
-                if (listMaSPTop.get(i) == listSanPham.get(j).getId()){
-                    listSpTopOut.add(listSanPham.get(j));
-                }
-            }
-        }
+//        ArrayList<SanPham> listSanPham = daoSanPham.getAllProduct(0);
+//        ArrayList<Integer> listMaSPTop = daoLuuHD.getTopSP();
+//        for (int i = 0; i < listMaSPTop.size(); i++) {
+//            for (int j = 0; j < listSanPham.size(); j++) {
+//                if (listMaSPTop.get(i) == listSanPham.get(j).getId()){
+//                    listSpTopOut.add(listSanPham.get(j));
+//                }
+//            }
+//        }
 
         ArrayList<TheLoai> listLoaiSP = daoSanPham.getDSLSP();
         for (int i = 0; i < listLoaiSP.size(); i++) {

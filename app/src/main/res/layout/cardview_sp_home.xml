@@ -16,14 +16,14 @@
             android:id="@+id/itemSpHomeImg"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:src="@drawable/img" />
+            android:src="@drawable/img_3" />
 
         <TextView
             android:id="@+id/itemSpHomeTen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ct_font_medium"
-            android:text="Cà Phê Sữa Nóng"
+            android:text="Iphone 14"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textStyle="bold"

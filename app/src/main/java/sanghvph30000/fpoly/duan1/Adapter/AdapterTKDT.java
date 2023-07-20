@@ -69,7 +69,7 @@ public class AdapterTKDT extends RecyclerView.Adapter<AdapterTKDT.ViewHolder>{
                 EditText btnHoaDonHuy = dialog.findViewById(R.id.btnHoaDonHuy);
                 EditText btnHoaDonXN = dialog.findViewById(R.id.btnHoaDonXN);
 
-                TextView txtHDTenNV = dialog.findViewById(R.id.txtHDTenNV);
+
                 TextView txtHDTenKH = dialog.findViewById(R.id.txtHDTenKH);
                 TextView txtHDNgayBan = dialog.findViewById(R.id.txtHDNgayBan);
                 RecyclerView recycle_hoaDon = dialog.findViewById(R.id.recycle_hoaDon);
@@ -78,7 +78,6 @@ public class AdapterTKDT extends RecyclerView.Adapter<AdapterTKDT.ViewHolder>{
                 ArrayList<LuuHoaDon> listHoaDon2 = daoLuuHD.getHDofMaHD(hoaDon.getMaHoaDon());
 
                 txtHoaDonTitle.setText("Chi tiết hóa đơn");
-                txtHDTenNV.setText(listHoaDon2.get(0).getTenUser());
                 txtHDTenKH.setText(listHoaDon2.get(0).getTenKhachHang());
                 txtHDNgayBan.setText(listHoaDon2.get(0).getNgayLapHD());
 

@@ -21,6 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:orientation="horizontal"
+
                 android:weightSum="2"
                 >
 
@@ -29,14 +30,14 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/bac_xiu" />
+                    android:src="@drawable/img_3" />
 
                 <ImageView
                     android:id="@+id/imgCTSanPham1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:src="@drawable/bac_xiu" />
+                    android:src="@drawable/img_3" />
 
             </LinearLayout>
 
@@ -45,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+              android:layout_marginBottom="150dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -76,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/ct_font_medium"
-                    android:text="Thức uống giúp tỉnh táo tức thì để bắt đầu ngày mới thật hứng khởi. Không đắng khét như cà phê truyền thống, The Coffee House Sữa Đá mang hương vị hài hoà đầy lôi cuốn. Là sự đậm đà của 100% cà phê Arabica Cầu Đất rang vừa tới, biến tấu tinh tế với sữa đặc và kem sữa ngọt ngào cực quyến rũ. Càng hấp dẫn hơn với topping thạch 100% cà phê nguyên chất giúp giữ trọn vị ngon đến ngụm cuối cùng."
+                    android:text="Iphone 14 đẳng cấp thời thượng, vô cùng sang chảnh"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -183,6 +185,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
             android:paddingTop="3dp"
             >
 

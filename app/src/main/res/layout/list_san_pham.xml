@@ -12,7 +12,7 @@
         <TextView
             android:id="@+id/txtSPHomeTittle"
             style="@style/edt_Label"
-            android:text="Pizza"
+            android:text="Iphone"
             android:textColor="@color/purple_200"
             android:textStyle="bold" />
 

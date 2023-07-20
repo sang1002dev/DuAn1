@@ -63,7 +63,7 @@
                     style="@style/edt_Label"
                     android:layout_marginLeft="10dp"
                     android:text="Ngày Bắt Đầu"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/purple_200" />
 
                 <EditText
                     android:id="@+id/edtTKDTStart"
@@ -73,8 +73,8 @@
                     android:drawablePadding="10dp"
                     android:editable="false"
                     android:focusable="false"
-                    android:hint="Nhập ngày bắt đầu"
-                    android:textColorHint="@color/black" />
+
+                   />
 
             </LinearLayout>
 
@@ -87,7 +87,7 @@
                     style="@style/edt_Label"
                     android:layout_marginLeft="10dp"
                     android:text="Ngày Kết Thúc"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/purple_200" />
 
                 <EditText
                     android:id="@+id/edtTKDTEnd"
@@ -97,8 +97,8 @@
                     android:drawablePadding="10dp"
                     android:editable="false"
                     android:focusable="false"
-                    android:hint="Nhập ngày kết thúc"
-                    android:textColorHint="@color/black" />
+
+                  />
 
             </LinearLayout>
 

@@ -68,17 +68,17 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Họ và tên"
-                    android:textColor="@color/red1"
+                    android:textColor="@color/purple_200"
                     android:layout_marginLeft="10dp"
                     />
 
                 <EditText
                     android:id="@+id/edtAddNVTen"
                     style="@style/edt_TextBox2"
-                    android:hint="Name"
+
                     android:editable="false"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
+
                     />
 
             </LinearLayout>
@@ -92,17 +92,17 @@
                 <TextView
                     style="@style/edt_Label"
                     android:text="Năm sinh"
-                    android:textColor="@color/red1"
+                    android:textColor="@color/purple_200"
                     android:layout_marginLeft="10dp"
                     />
 
                 <EditText
                     android:id="@+id/edtAddNVNamsinh"
                     style="@style/edt_TextBox2"
-                    android:hint="Date"
+
                     android:editable="false"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
+
                     />
 
             </LinearLayout>
@@ -117,15 +117,14 @@
                     style="@style/edt_Label"
                     android:layout_marginLeft="10dp"
                     android:text="Số điện thoại"
-                    android:textColor="@color/red1" />
+                    android:textColor="@color/purple_200" />
 
                 <EditText
                     android:id="@+id/edtAddNVSdt"
                     style="@style/edt_TextBox2"
-                    android:hint="PhoneNumber"
                     android:editable="false"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
+
                     />
 
                 <TextView
@@ -133,15 +132,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Tên đăng nhập"
-                    android:textColor="@color/red1" />
+                    android:textColor="@color/purple_200" />
 
                 <EditText
                     android:id="@+id/edtAddNVTendangnhap"
                     style="@style/edt_TextBox2"
-                    android:hint="UserName"
                     android:editable="false"
+                    android:layout_marginBottom="30dp"
                     android:layout_marginTop="5dp"
-                    android:textColorHint="@color/black"
                     />
 
 

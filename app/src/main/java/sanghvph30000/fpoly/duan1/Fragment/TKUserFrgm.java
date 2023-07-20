@@ -21,7 +21,7 @@ import sanghvph30000.fpoly.duan1.DAO.DAOLuuHD;
 import sanghvph30000.fpoly.duan1.Model.LuuHoaDon;
 import sanghvph30000.fpoly.duan1.R;
 
-public class TKNhanVienFrgm extends Fragment {
+public class TKUserFrgm extends Fragment {
 
     public RecyclerView recycler_TKNV;
     public DAOLuuHD daoLuuHD;
@@ -31,7 +31,7 @@ public class TKNhanVienFrgm extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_t_k_nhan_vien_frgm, container, false);
+        View view = inflater.inflate(R.layout.fragment_t_k_user_frgm, container, false);
 
 //        Ánh xạ các View;
         ImageView btnBackTKNV = view.findViewById(R.id.btnBackTKNV);

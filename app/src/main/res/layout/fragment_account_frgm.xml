@@ -12,7 +12,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/img" />
+        android:src="@drawable/logophone1" />
 
     <TextView
         android:id="@+id/txtUserName"
@@ -20,7 +20,7 @@
         android:layout_marginTop="10dp"
         android:text="Admin"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <TextView

@@ -68,8 +68,8 @@ public class DbHelper extends SQLiteOpenHelper {
 // Bảng lưu hóa đơn
         String tableLuuHoaDon = "CREATE Table LuuHoaDon (\n" +
                 "maLuu INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
-                "maHoaDon INTEGER REFERENCES HoaDon(MaHoaDon),\n" +
-                "maUser INTEGER REFERENCES User(MaUser),\n" +
+                "MaHoaDon INTEGER REFERENCES HoaDon(MaHoaDon),\n" +
+                "MaUser INTEGER REFERENCES User(MaUser),\n" +
                 "tenUser TEXT,\n" +
                 "tenKhachHang TEXT,\n" +
                 "NgayLapHD TEXT,\n" +

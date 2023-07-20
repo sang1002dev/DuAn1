@@ -43,7 +43,7 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/user_avatar"
+            android:src="@drawable/sang"
             />
 
     </LinearLayout>
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Họ và tên"
-                android:textColor="@color/red1"
+                android:textColor="@color/purple_200"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
                 android:textSize="20dp" />
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tên đăng nhập"
-                android:textColor="@color/red1"
+                android:textColor="@color/purple_200"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
                 android:textSize="20dp" />
@@ -151,7 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chức vụ"
-                android:textColor="@color/red1"
+                android:textColor="@color/purple_200"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
                 android:textSize="25dp" />
@@ -192,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Số điện thoại"
-                android:textColor="@color/red1"
+                android:textColor="@color/purple_200"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
                 android:textSize="20dp" />
@@ -234,7 +234,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Năm sinh"
-                android:textColor="@color/red1"
+                android:textColor="@color/purple_200"
                 android:fontFamily="@font/ct_font_medium"
                 android:layout_marginLeft="15dp"
                 android:textSize="20dp" />
@@ -267,7 +267,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
@@ -308,7 +308,7 @@
                 android:paddingTop="7dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
-                android:text="Xóa NV"
+                android:text="Xóa User"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />

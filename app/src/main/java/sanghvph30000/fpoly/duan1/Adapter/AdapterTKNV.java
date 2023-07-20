@@ -38,7 +38,7 @@ public class AdapterTKNV extends RecyclerView.Adapter<AdapterTKNV.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_thongkenhanvien, parent, false);
+                .inflate(R.layout.item_thongkeuser, parent, false);
         daoLuuHD = new DAOLuuHD(view.getContext());
         daoUser = new DAOUser(view.getContext());
         return new ViewHolder(view);
