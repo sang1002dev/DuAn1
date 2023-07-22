@@ -21,7 +21,7 @@
             android:id="@+id/txtHoaDonTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hóa đơn thanh toán"
+            android:text="Hóa đơn đặt hàng"
             android:fontFamily="@font/ct_font_medium"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -149,20 +149,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tổng tiền"
+                    android:text="Tổng tiền:"
                     android:textColor="@color/white"
                     android:textSize="20dp"
                     android:fontFamily="@font/ct_font_medium"
                     />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="thanh toán"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/ct_font_medium"
-                    />
+
 
 
             </LinearLayout>

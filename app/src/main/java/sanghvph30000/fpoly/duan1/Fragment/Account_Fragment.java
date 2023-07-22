@@ -25,7 +25,7 @@ import sanghvph30000.fpoly.duan1.R;
 
 
 public class Account_Fragment extends Fragment {
-    private LinearLayout userFrgmTaiKhoan, userFrgmDoiMK, userFrgmTKDoanhThu, userFrgmTKNhanVien, userFrgmThemSP, userFrgmThemLSP, userFrgmThemNhanVien, userFrgmDangXuat;
+    private LinearLayout userFrgmTaiKhoan,userFrgmLichSu, userFrgmDoiMK, userFrgmTKDoanhThu, userFrgmTKNhanVien, userFrgmThemSP, userFrgmThemLSP, userFrgmThemNhanVien, userFrgmDangXuat;
     TextView txtUserName, txtChucVu;
     DAOUser daoUser;
 
@@ -36,6 +36,7 @@ public class Account_Fragment extends Fragment {
 
         userFrgmTaiKhoan = view.findViewById(R.id.userFrgmTaiKhoan);
         userFrgmDoiMK = view.findViewById(R.id.userFrgmDoiMK);
+        userFrgmLichSu = view.findViewById(R.id.userFrgmLichSu);
         userFrgmTKDoanhThu = view.findViewById(R.id.userFrgmTKDoanhThu);
         userFrgmTKNhanVien = view.findViewById(R.id.userFrgmTKNhanVien);
         userFrgmThemSP = view.findViewById(R.id.userFrgmThemSP);
@@ -76,7 +77,12 @@ public class Account_Fragment extends Fragment {
                 loadFragment(new DoiMKFrgm());
             }
         });
-
+        userFrgmLichSu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new HistoryFragment());
+            }
+        });
         userFrgmTKDoanhThu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

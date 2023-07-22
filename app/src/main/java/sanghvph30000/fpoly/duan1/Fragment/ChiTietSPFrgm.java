@@ -27,7 +27,6 @@ import sanghvph30000.fpoly.duan1.R;
 public class ChiTietSPFrgm extends Fragment {
 
     SanPham sanPham;
-    String sizeCheck;
     TextView txtChiTietTenSp, txtChiTietGiaSP, txtChiTietMoTaSP, txtChiTietTongTien, txtChiTietSL;
     ImageView img_sp, img_sp1, btnSoLuongTang, btnSoLuongGiam;
     double donGia = 0;
@@ -52,7 +51,6 @@ public class ChiTietSPFrgm extends Fragment {
         txtChiTietTongTien = view.findViewById(R.id.txtChiTietTongTien);
         btnSoLuongTang = view.findViewById(R.id.btnSoLuongTang);
         btnSoLuongGiam = view.findViewById(R.id.btnSoLuongGiam);
-
         daoGioHang = new DAOGioHang(getContext());
 
 
@@ -98,8 +96,8 @@ public class ChiTietSPFrgm extends Fragment {
 
 //        Set Data cho các View
         txtChiTietTenSp.setText(sanPham.getTenSanPham());
-        double giaSP = sanPham.getPrice();
-        String mGiaSP = String.format("%,.0f", giaSP);
+        donGia = sanPham.getPrice();
+        String mGiaSP = String.format("%,.0f", donGia);
         txtChiTietGiaSP.setText(mGiaSP + " VNĐ");
         txtChiTietMoTaSP.setText(sanPham.getMota());
         byte[] productsImage = sanPham.getImage();
@@ -150,10 +148,10 @@ public class ChiTietSPFrgm extends Fragment {
         return view;
     }
 
-//    Tính tổng tiền
-    public double tinhTien(int mSoLuong, double mDonGia){
+////    Tính tổng tiền
+    public double tinhTien(int soLuong , double donGia){
         double tongTien = 0;
-        tongTien = mSoLuong * mDonGia ;
+        tongTien = soLuong * donGia ;
         return tongTien;
     }
 

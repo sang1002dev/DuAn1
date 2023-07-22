@@ -49,6 +49,10 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder>{
         Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
         holder.itemSpHomeImg.setImageBitmap(bitmap);
         holder.itemSpHomeTen.setText(sanPham.getTenSanPham());
+        double gia = sanPham.getPrice();
+        String giaFormatted = String.format("%,.0f VNĐ", gia);
+        holder.itemSpHomeGia.setText(giaFormatted);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,11 +69,12 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView itemSpHomeTen;
+        TextView itemSpHomeTen,itemSpHomeGia;
         ImageView itemSpHomeImg;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemSpHomeGia = itemView.findViewById(R.id.itemSpHomeGia);
             itemSpHomeTen = itemView.findViewById(R.id.itemSpHomeTen);
             itemSpHomeImg = itemView.findViewById(R.id.itemSpHomeImg);
         }

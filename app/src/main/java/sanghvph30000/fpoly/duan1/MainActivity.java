@@ -1,7 +1,9 @@
 package sanghvph30000.fpoly.duan1;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import sanghvph30000.fpoly.duan1.Fragment.Account_Fragment;
 import sanghvph30000.fpoly.duan1.Fragment.HomeFrgm;
 import sanghvph30000.fpoly.duan1.Fragment.ProductFrgm;
 import sanghvph30000.fpoly.duan1.Fragment.StoreFrgm;
+import sanghvph30000.fpoly.duan1.Model.User;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -55,7 +58,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 return true;
         }
         return false;
+
     }
+
+
 
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
