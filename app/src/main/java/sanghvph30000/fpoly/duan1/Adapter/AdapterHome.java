@@ -56,7 +56,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder>{
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.bottomNavigationView.setSelectedItemId(R.id.pageSanPham);
+                //MainActivity.bottomNavigationView.setSelectedItemId(R.id.pageSanPham);
                 loadFragment(new ChiTietSPFrgm(sanPham));
             }
         });

@@ -59,6 +59,8 @@ public class Account_Fragment extends Fragment {
             userFrgmThemSP.setVisibility(View.GONE);
             userFrgmThemLSP.setVisibility(View.GONE);
             userFrgmTKDoanhThu.setVisibility(View.GONE);
+        }else {
+            userFrgmLichSu.setVisibility(View.GONE);
         }
 
         txtUserName.setText(user.getFullName());

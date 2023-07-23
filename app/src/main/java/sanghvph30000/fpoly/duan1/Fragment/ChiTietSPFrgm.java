@@ -1,5 +1,6 @@
 package sanghvph30000.fpoly.duan1.Fragment;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -19,19 +20,22 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.ArrayList;
 
 import sanghvph30000.fpoly.duan1.DAO.DAOGioHang;
+import sanghvph30000.fpoly.duan1.DAO.DAOUser;
 import sanghvph30000.fpoly.duan1.MainActivity;
 import sanghvph30000.fpoly.duan1.Model.GioHang;
 import sanghvph30000.fpoly.duan1.Model.SanPham;
+import sanghvph30000.fpoly.duan1.Model.User;
 import sanghvph30000.fpoly.duan1.R;
 
 public class ChiTietSPFrgm extends Fragment {
 
     SanPham sanPham;
-    TextView txtChiTietTenSp, txtChiTietGiaSP, txtChiTietMoTaSP, txtChiTietTongTien, txtChiTietSL;
-    ImageView img_sp, img_sp1, btnSoLuongTang, btnSoLuongGiam;
+    TextView txtChiTietTenSp, txtChiTietGiaSP, txtChiTietMoTaSP, txtChiTietTongTien, txtChiTietSL, txtTongtien, txtSoluong;
+    ImageView img_sp, img_sp1, btnSoLuongTang, btnSoLuongGiam,btnBackSanPham;
     double donGia = 0;
     int soLuong;
     double tongTien;
+    DAOUser daoUser;
     DAOGioHang daoGioHang;
 
     public ChiTietSPFrgm(SanPham sanPham) {
@@ -45,14 +49,34 @@ public class ChiTietSPFrgm extends Fragment {
         txtChiTietTenSp = view.findViewById(R.id.txtChiTietTenSp);
         txtChiTietGiaSP = view.findViewById(R.id.txtChiTietGiaSP);
         txtChiTietMoTaSP = view.findViewById(R.id.txtChiTietMoTaSP);
+        txtTongtien = view.findViewById(R.id.txtTongtien);
+        txtSoluong = view.findViewById(R.id.txtSoluong);
         txtChiTietSL = view.findViewById(R.id.txtChiTietSL);
         img_sp = view.findViewById(R.id.imgCTSanPham);
         img_sp1 = view.findViewById(R.id.imgCTSanPham1);
         txtChiTietTongTien = view.findViewById(R.id.txtChiTietTongTien);
         btnSoLuongTang = view.findViewById(R.id.btnSoLuongTang);
         btnSoLuongGiam = view.findViewById(R.id.btnSoLuongGiam);
+        btnBackSanPham = view.findViewById(R.id.btnBackSanPham);
+        EditText btnChiTietAddToCart = view.findViewById(R.id.btnChiTietAddToCart);
         daoGioHang = new DAOGioHang(getContext());
+        daoUser = new DAOUser(getContext());
 
+        SharedPreferences pref = getActivity().getSharedPreferences("USER_FILE", getActivity().MODE_PRIVATE);
+        int maUser = pref.getInt("MA", 0);
+        User user = daoUser.getUser(maUser);
+        int quyenUser = user.getMaChucVu();
+
+        if (quyenUser == 1) {
+            btnSoLuongGiam.setVisibility(View.GONE);
+            btnSoLuongTang.setVisibility(View.GONE);
+            txtChiTietTongTien.setVisibility(View.GONE);
+            txtChiTietSL.setVisibility(View.GONE);
+            txtTongtien.setVisibility(View.GONE);
+            txtSoluong.setVisibility(View.GONE);
+            btnChiTietAddToCart.setVisibility(View.GONE);
+
+        }
 
 //        Set kích thước Size
 
@@ -109,7 +133,7 @@ public class ChiTietSPFrgm extends Fragment {
         String mTinhTien = String.format("%,.0f", tongTien);
         txtChiTietTongTien.setText(mTinhTien + " VNĐ");
 
-        EditText btnChiTietAddToCart = view.findViewById(R.id.btnChiTietAddToCart);
+
 
 //        Thêm sự kiện Button Add
         btnChiTietAddToCart.setOnClickListener(new View.OnClickListener() {
@@ -144,9 +168,22 @@ public class ChiTietSPFrgm extends Fragment {
                 MainActivity.bottomNavigationView.setSelectedItemId(R.id.pageBanHang);
             }
         });
+        btnBackSanPham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment currentFragment = getParentFragmentManager().findFragmentById(R.id.frame_container);
+
+                // Kiểm tra nếu currentFragment là HomeFrgm thì không làm gì cả (để mặc định quay lại màn hình trước đó)
+                // Nếu currentFragment là ProductFrgm, thì không làm gì cả (để giữ nguyên ở trong ProductFrgm)
+                if (!(currentFragment instanceof HomeFrgm)) {
+                    getParentFragmentManager().popBackStack();
+                }
+            }
+        });
 
         return view;
     }
+
 
 ////    Tính tổng tiền
     public double tinhTien(int soLuong , double donGia){

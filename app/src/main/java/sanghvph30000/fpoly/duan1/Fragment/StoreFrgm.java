@@ -48,7 +48,7 @@ public class StoreFrgm extends Fragment {
     ArrayList<GioHang> listGioHang;
     public static TextView txtGHTongTien;
     double tongTien = 0;
-    EditText edtGHTenKH;
+    EditText edtGHTenKH,edtGHSDT, edtGHDiaChi;
     ImageView iconRefreshStore;
 
     @Override
@@ -57,6 +57,8 @@ public class StoreFrgm extends Fragment {
         View view = inflater.inflate(R.layout.fragment_store_frgm, container, false);
 
         edtGHTenKH = view.findViewById(R.id.edtGHTenKH);
+        edtGHSDT = view.findViewById(R.id.edtGHSDT);
+        edtGHDiaChi = view.findViewById(R.id.edtGHDiaChi);
         daoGioHang = new DAOGioHang(getContext());
         daoUser = new DAOUser(getContext());
         daoHoaDon = new DAOHoaDon(getContext());
@@ -117,6 +119,8 @@ public class StoreFrgm extends Fragment {
             @Override
             public void onClick(View v) {
                 String tenKH = edtGHTenKH.getText().toString();
+                String soDT = edtGHSDT.getText().toString();
+                String diaChi = edtGHDiaChi.getText().toString();
                 createData();
                 if (listGioHang.size() == 0){
                     Toast.makeText(getContext(), "Vui lòng chọn sản phẩm!", Toast.LENGTH_SHORT).show();
@@ -154,6 +158,8 @@ public class StoreFrgm extends Fragment {
 
                         TextView txtHDTenKH = dialog.findViewById(R.id.txtHDTenKH);
                         TextView txtHDNgayBan = dialog.findViewById(R.id.txtHDNgayBan);
+                        TextView txtHDSDT = dialog.findViewById(R.id.txtHDSDT);
+                        TextView txtHDDiaChi = dialog.findViewById(R.id.txtHDDiaChi);
                         RecyclerView recycle_hoaDon = dialog.findViewById(R.id.recycle_hoaDon);
                         TextView txtHDTongTien = dialog.findViewById(R.id.txtHDTongTien);
 
@@ -161,6 +167,8 @@ public class StoreFrgm extends Fragment {
 
 
                         txtHDTenKH.setText(tenKH);
+                        txtHDSDT.setText(soDT);
+                        txtHDDiaChi.setText(diaChi);
                         txtHDNgayBan.setText(ngayTaoHD);
                         String outTongTien = String.format("%,.0f", tongTien);
                         txtHDTongTien.setText(outTongTien + "Đ");

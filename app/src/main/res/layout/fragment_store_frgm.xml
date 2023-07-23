@@ -77,6 +77,21 @@
             android:id="@+id/edtGHTenKH"
             style="@style/edt_TextBox2"
             android:hint="Tên khách hàng"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/edtGHSDT"
+            style="@style/edt_TextBox2"
+            android:hint="SDT"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/edtGHDiaChi"
+            style="@style/edt_TextBox2"
+            android:hint="Địa chỉ"
+            android:textSize="15dp"
             android:layout_marginTop="5dp"
             />
 
@@ -121,12 +136,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/bo_tron_edt"
-                android:textColor="@color/purple_200"
+                android:backgroundTint="#65D386FC"
                 android:text="Đặt hàng"
                 android:textSize="22dp"
                 android:gravity="center"
                 android:layout_marginLeft="20dp"
-
+                android:textColor="@color/card"
                 android:fontFamily="@font/ct_font_medium"
                 android:textStyle="bold"
                 android:paddingTop="5dp"

@@ -16,6 +16,11 @@
         android:icon="@drawable/store"
         android:title="Giỏ Hàng"/>
     <item
+        android:id="@+id/pageDonHang"
+        android:enabled="true"
+        android:icon="@drawable/overview"
+        android:title="Đơn Hàng"/>
+    <item
         android:id="@+id/pageTaiKhoan"
         android:enabled="true"
         android:icon="@drawable/account"
