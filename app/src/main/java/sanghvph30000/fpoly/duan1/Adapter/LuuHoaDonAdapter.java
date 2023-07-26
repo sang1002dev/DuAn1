@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import sanghvph30000.fpoly.duan1.Model.HoaDon;
+import sanghvph30000.fpoly.duan1.Model.LuuHoaDon;
 import sanghvph30000.fpoly.duan1.R;
 
-public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.HoaDonViewHolder> {
-    private List<HoaDon> listHoaDon;
+public class LuuHoaDonAdapter extends RecyclerView.Adapter<LuuHoaDonAdapter.HoaDonViewHolder> {
+    private List<LuuHoaDon> listHoaDon;
 
-    public HoaDonAdapter(List<HoaDon> listHoaDon) {
+    public LuuHoaDonAdapter(List<LuuHoaDon> listHoaDon) {
         this.listHoaDon = listHoaDon;
     }
 
@@ -29,11 +29,18 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.HoaDonView
 
     @Override
     public void onBindViewHolder(@NonNull HoaDonViewHolder holder, int position) {
-        HoaDon hoaDon = listHoaDon.get(position);
-        holder.txtTenKhachHang.setText(hoaDon.getTenKhachHang());
-        holder.txtNgayBan.setText(hoaDon.getNgayLapHD());
-        holder.txtTongTien.setText(String.format("%,.0fđ", hoaDon.getThanhTien()));
-        holder.txtTrangThai.setText(hoaDon.getTrangThai());
+        LuuHoaDon luuHoaDon = listHoaDon.get(position);
+        holder.txtTenKhachHang.setText(luuHoaDon.getTenKhachHang());
+        holder.txtNgayBan.setText(luuHoaDon.getNgayLapHD());
+        holder.txtTongTien.setText(String.format("%,.0fđ", luuHoaDon.getThanhTien()));
+
+        // Kiểm tra giá trị trước khi hiển thị trạng thái
+        String trangThai = luuHoaDon.getTrangThai() != null ? luuHoaDon.getTrangThai() : "Đang xử lý";
+        holder.txtTrangThai.setText(trangThai);
+
+        // Sử dụng AdapterHoaDon để hiển thị danh sách sản phẩm của mỗi hóa đơn
+        AdapterHoaDon adapterHoaDon = new AdapterHoaDon(holder.itemView.getContext(), luuHoaDon.getListGioHang());
+        holder.recycle_itemLS.setAdapter(adapterHoaDon);
     }
 
     @Override
@@ -43,6 +50,7 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.HoaDonView
 
     public static class HoaDonViewHolder extends RecyclerView.ViewHolder {
         TextView txtTenKhachHang, txtNgayBan, txtTongTien, txtTrangThai;
+        RecyclerView recycle_itemLS;
 
         public HoaDonViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -50,13 +58,8 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.HoaDonView
             txtNgayBan = itemView.findViewById(R.id.txtLSNgayBan);
             txtTongTien = itemView.findViewById(R.id.txtLSTongTien);
             txtTrangThai = itemView.findViewById(R.id.txtLSTrangThai);
+            recycle_itemLS = itemView.findViewById(R.id.recycle_itemLS);
+            // Không cần sử dụng LinearLayoutManager vì nó đã được sử dụng trong XML của item_lichsu
         }
     }
-
-    public void addHoaDon(HoaDon hoaDon) {
-        hoaDon.setTrangThai("Đang xử lý");
-        listHoaDon.add(hoaDon);
-        notifyDataSetChanged();
-    }
 }
-

@@ -41,7 +41,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MaUser INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
                 "FullName TEXT,\n" +
                 "Username TEXT,\n" +
-                "ChucVu INTEGER REFERENCES ChucVu(machucvu),\n" +
+                "ChucVu INTEGER REFERENCES ChucVu(MaChucVu),\n" +
                 "Password TEXT,\n" +
                 "SDT TEXT,\n" +
                 "NamSinh INTEGER\n" +
@@ -54,12 +54,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MaUser INTEGER REFERENCES User(MaUser),\n" +
                 "TenKhachHang TEXT,\n" +
                 "NgayLapHD TEXT,\n" +
-                "MaGioHang INTEGER\n" +
+                "TrangThai TEXT ,\n "+
+                "MaGioHang INTEGER REFERENCES GioHang(MaGioHang)\n" +
                 ");";
         db.execSQL(tableHoaDon);
 // Bảng giỏ hàng
         String tableGioHang = "CREATE Table GioHang (\n" +
-                "MaGioHang INTEGER,\n" +
+                "MaGioHang INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
                 "MaSanPham INTEGER REFERENCES SanPham(MaSanPham),\n" +
                 "SoLuong INTEGER,\n" +
                 "DonGia DOUBLE\n" +

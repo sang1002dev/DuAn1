@@ -1,12 +1,13 @@
 package sanghvph30000.fpoly.duan1.Model;
 
+import java.util.ArrayList;
+
 public class HoaDon {
     int maHoaDon;
     int maUser;
     String tenUser;
     String tenKhachHang;
     String NgayLapHD;
-    String TrangThai;
     int maGiohang;
     int maSP;
     String tenSP;
@@ -14,25 +15,27 @@ public class HoaDon {
     double donGia;
     double thanhTien;
 
+
+
     public HoaDon(int maUser, String tenKhachHang, String ngayLapHD, int maGiohang) {
         this.maUser = maUser;
         this.tenKhachHang = tenKhachHang;
-        NgayLapHD = ngayLapHD;
+        this.NgayLapHD = ngayLapHD;
         this.maGiohang = maGiohang;
     }
 
-    public HoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD,String TrangThai, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
+    public HoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
         this.maHoaDon = maHoaDon;
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.tenKhachHang = tenKhachHang;
-        NgayLapHD = ngayLapHD;
-        this.TrangThai = TrangThai;
+        this.NgayLapHD = ngayLapHD;
         this.maSP = maSP;
         this.tenSP = tenSP;
         this.soLuong = soLuong;
         this.donGia = donGia;
         this.thanhTien = thanhTien;
+
     }
 
     public int getMaSP() {
@@ -76,13 +79,6 @@ public class HoaDon {
     }
 
 
-    public String getTrangThai() {
-        return TrangThai;
-    }
-
-    public void setTrangThai(String trangThai) {
-        TrangThai = trangThai;
-    }
 
     public double getDonGia() {
         return donGia;
@@ -131,4 +127,5 @@ public class HoaDon {
     public void setMaGiohang(int maGiohang) {
         this.maGiohang = maGiohang;
     }
+
 }

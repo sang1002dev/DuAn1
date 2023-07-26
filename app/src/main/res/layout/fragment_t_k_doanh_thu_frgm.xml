@@ -111,7 +111,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/bo_tron_edt"
-            android:backgroundTint="@color/purple_200"
+            android:backgroundTint="#65D386FC"
             android:editable="false"
             android:focusable="false"
             android:fontFamily="@font/ct_font_medium"

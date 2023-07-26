@@ -134,7 +134,7 @@ public class StoreFrgm extends Fragment {
                     else {
                         edtGHTenKH.setHintTextColor(Color.BLACK);
 
-//                    Lấy tên nhân viên
+//                    Lấy tên khách hàng
                         SharedPreferences pref = getActivity().getSharedPreferences("USER_FILE", getActivity().MODE_PRIVATE);
                         int maUser = pref.getInt("MA", 0);
                         User user = daoUser.getUser(maUser);

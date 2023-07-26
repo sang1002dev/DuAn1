@@ -1,5 +1,7 @@
 package sanghvph30000.fpoly.duan1.Model;
 
+import java.util.ArrayList;
+
 public class LuuHoaDon {
     int maLuu;
     int maHoaDon;
@@ -10,6 +12,7 @@ public class LuuHoaDon {
     String userSDT;
     int userNamSinh;
     String tenKhachHang;
+    String  trangThai;
     String NgayLapHD;
     int maSP;
     String tenSP;
@@ -17,20 +20,24 @@ public class LuuHoaDon {
     String size;
     double donGia;
     double thanhTien;
+    ArrayList<GioHang> listGioHang;
 
-    public LuuHoaDon(int maLuu, int maHoaDon, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
+
+    public LuuHoaDon(int maLuu, int maHoaDon, String tenUser, String tenKhachHang, String trangThai, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
         this.maLuu = maLuu;
         this.maHoaDon = maHoaDon;
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.tenKhachHang = tenKhachHang;
-        NgayLapHD = ngayLapHD;
+        this.trangThai = "Đang xử lý";
+        this.NgayLapHD = NgayLapHD;
         this.maSP = maSP;
         this.tenSP = tenSP;
         this.soLuong = soLuong;
         this.size = size;
         this.donGia = donGia;
         this.thanhTien = thanhTien;
+        this.listGioHang = new ArrayList<>();
     }
 
     public LuuHoaDon(int maLuu, int maHoaDon, String tenKhachHang, double thanhTien) {
@@ -40,12 +47,12 @@ public class LuuHoaDon {
         this.thanhTien = thanhTien;
     }
 
-    public LuuHoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia, double thanhTien) {
+    public LuuHoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String NgayLapHD, int maSP, String tenSP, int soLuong, String size, double donGia, double thanhTien) {
         this.maHoaDon = maHoaDon;
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.tenKhachHang = tenKhachHang;
-        NgayLapHD = ngayLapHD;
+        this.NgayLapHD = NgayLapHD;
         this.maSP = maSP;
         this.tenSP = tenSP;
         this.soLuong = soLuong;
@@ -74,6 +81,9 @@ public class LuuHoaDon {
         this.soLuong = soLuong;
         this.size = size;
         this.donGia = donGia;
+    }
+
+    public LuuHoaDon(int maHoaDon, int maUser, String tenUser, String ngayLapHD, int maSP, String tenSP, int soLuong, String tenKhachHang, double donGia, double thanhTien) {
     }
 
     public int getMaLuu() {
@@ -127,6 +137,8 @@ public class LuuHoaDon {
     public int getMaSP() {
         return maSP;
     }
+
+
 
     public void setMaSP(int maSP) {
         this.maSP = maSP;
@@ -202,5 +214,21 @@ public class LuuHoaDon {
 
     public void setUserNamSinh(int userNamSinh) {
         this.userNamSinh = userNamSinh;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
+    public ArrayList<GioHang> getListGioHang() {
+        return listGioHang;
+    }
+
+    public void setListGioHang(ArrayList<GioHang> listGioHang) {
+        this.listGioHang = listGioHang;
     }
 }

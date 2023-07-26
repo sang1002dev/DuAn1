@@ -30,6 +30,7 @@ public class DAOHoaDon {
         values.put("MaUser", hoaDon.getMaUser());
         values.put("TenKhachHang", hoaDon.getTenKhachHang());
         values.put("NgayLapHD", hoaDon.getNgayLapHD());
+        values.put("TrangThai", "Đang xử lý");
         values.put("MaGioHang", hoaDon.getMaGiohang());
         long check = database.insert("HoaDon", null, values);
         if (check == -1){

@@ -186,37 +186,10 @@
                 android:text="Đang xử lý"
                 android:fontFamily="@font/ct_font_bold"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp"
-            >
 
-            <EditText
-                android:id="@+id/btnLSXN"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bo_tron_edt"
-                android:backgroundTint="@color/white"
-                android:text="Đã nhận hàng"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/ct_font_medium"
-                android:textStyle="bold"
-                android:paddingTop="7dp"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:editable="false"
-                android:focusable="false"
-                />
-        </LinearLayout>
 
     </LinearLayout>
 

@@ -267,7 +267,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:background="@drawable/bo_tron_edt"
-            android:backgroundTint="@color/purple_200"
+            android:backgroundTint="#65D386FC"
             android:text="Chỉnh Sửa Thông Tin"
             android:gravity="center"
             android:textSize="20dp"

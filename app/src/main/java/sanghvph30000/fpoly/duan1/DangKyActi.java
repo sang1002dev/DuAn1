@@ -22,6 +22,7 @@ public class DangKyActi extends AppCompatActivity {
     private EditText edtFullName, edtUsername, edtPassword, edtPhoneNumber, edtBirthYear;
     private CheckBox chkSavePassword;
     private Button btnRegister;
+    TextView textView;
 
     // Khai báo đối tượng lớp DatabaseHelper để tạo và quản lý cơ sở dữ liệu
     private DbHelper dbHelper;
@@ -38,6 +39,7 @@ public class DangKyActi extends AppCompatActivity {
         edtPhoneNumber = findViewById(R.id.edtSDT);
         edtBirthYear = findViewById(R.id.edtNamSinh);
         chkSavePassword = findViewById(R.id.chkNhoMK1);
+        textView = findViewById(R.id.tvDaco);
         btnRegister = findViewById(R.id.btnDangki);
 
         // Khởi tạo đối tượng DAOUser và truyền context của Activity vào constructor
@@ -69,6 +71,13 @@ public class DangKyActi extends AppCompatActivity {
                 } else {
                     Toast.makeText(DangKyActi.this, "Đăng ký thất bại", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DangNhapAct.class);
+                startActivity(intent);
             }
         });
     }
