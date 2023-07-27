@@ -32,6 +32,8 @@ public class DAOLuuHD {
         values.put("tenUser", luuHoaDon.getTenUser());
         values.put("tenKhachHang", luuHoaDon.getTenKhachHang());
         values.put("NgayLapHD", luuHoaDon.getNgayLapHD());
+        values.put("SDT", luuHoaDon.getSDT());
+        values.put("DiaChi", luuHoaDon.getDiaChi());
         values.put("maSP", luuHoaDon.getMaSP());
         values.put("tenSP", luuHoaDon.getTenSP());
         values.put("soLuong", luuHoaDon.getSoLuong());

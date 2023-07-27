@@ -74,12 +74,15 @@ public class DbHelper extends SQLiteOpenHelper {
                 "tenUser TEXT,\n" +
                 "tenKhachHang TEXT,\n" +
                 "NgayLapHD TEXT,\n" +
+                "SDT TEXT,\n" +
+                "DiaChi TEXT,\n" +
                 "maSP INTEGER,\n" +
                 "tenSP TEXT,\n" +
                 "soLuong INTEGER,\n" +
                 "size TEXT,\n" +
                 "donGia DOUBLE\n," +
-                "thanhTien DOUBLE\n" +
+                "thanhTien DOUBLE,\n" +
+                "TrangThai TEXT\n" +
                 ");";
         db.execSQL(tableLuuHoaDon);
     }

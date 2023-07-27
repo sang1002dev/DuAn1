@@ -9,11 +9,12 @@ public class LuuHoaDon {
     String tenUser;
     String userName;
     int chucVu;
-    String userSDT;
     int userNamSinh;
     String tenKhachHang;
     String  trangThai;
     String NgayLapHD;
+    String SDT;
+    String DiaChi;
     int maSP;
     String tenSP;
     int soLuong;
@@ -23,7 +24,7 @@ public class LuuHoaDon {
     ArrayList<GioHang> listGioHang;
 
 
-    public LuuHoaDon(int maLuu, int maHoaDon, String tenUser, String tenKhachHang, String trangThai, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
+    public LuuHoaDon(int maLuu, int maHoaDon, String tenUser, String tenKhachHang,String SDT, String DiaChi, String trangThai, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
         this.maLuu = maLuu;
         this.maHoaDon = maHoaDon;
         this.maUser = maUser;
@@ -31,6 +32,8 @@ public class LuuHoaDon {
         this.tenKhachHang = tenKhachHang;
         this.trangThai = "Đang xử lý";
         this.NgayLapHD = NgayLapHD;
+        this.SDT = SDT;
+        this.DiaChi = DiaChi;
         this.maSP = maSP;
         this.tenSP = tenSP;
         this.soLuong = soLuong;
@@ -61,12 +64,11 @@ public class LuuHoaDon {
         this.thanhTien = thanhTien;
     }
 
-    public LuuHoaDon(int maUser, String tenUser, String userName, int chucVu, String userSDT, int userNamSinh, double thanhTien) {
+    public LuuHoaDon(int maUser, String tenUser, String userName, int chucVu, int userNamSinh, double thanhTien) {
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.userName = userName;
         this.chucVu = chucVu;
-        this.userSDT = userSDT;
         this.userNamSinh = userNamSinh;
         this.thanhTien = thanhTien;
     }
@@ -84,6 +86,12 @@ public class LuuHoaDon {
     }
 
     public LuuHoaDon(int maHoaDon, int maUser, String tenUser, String ngayLapHD, int maSP, String tenSP, int soLuong, String tenKhachHang, double donGia, double thanhTien) {
+    }
+
+    public LuuHoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
+    }
+
+    public LuuHoaDon(int maUser, String fullName, String userName, int chucVu, String userSDT, int userNamSinh, double userDoanhThu) {
     }
 
     public int getMaLuu() {
@@ -128,6 +136,22 @@ public class LuuHoaDon {
 
     public String getNgayLapHD() {
         return NgayLapHD;
+    }
+
+    public String getSDT() {
+        return SDT;
+    }
+
+    public void setSDT(String SDT) {
+        this.SDT = SDT;
+    }
+
+    public String getDiaChi() {
+        return DiaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        DiaChi = diaChi;
     }
 
     public void setNgayLapHD(String ngayLapHD) {
@@ -200,13 +224,6 @@ public class LuuHoaDon {
         this.chucVu = chucVu;
     }
 
-    public String getUserSDT() {
-        return userSDT;
-    }
-
-    public void setUserSDT(String userSDT) {
-        this.userSDT = userSDT;
-    }
 
     public int getUserNamSinh() {
         return userNamSinh;
