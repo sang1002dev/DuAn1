@@ -1,5 +1,6 @@
 package sanghvph30000.fpoly.duan1.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,8 +24,10 @@ import sanghvph30000.fpoly.duan1.R;
 
 public class HistoryFragment extends Fragment {
     private RecyclerView recyclerLichSu;
-    private LuuHoaDonAdapter hoaDonAdapter;
-    private List<LuuHoaDon> listLuuHoaDon = new ArrayList<>(); // Khởi tạo listLuuHoaDon
+    private LuuHoaDonAdapter luuhoaDonAdapter;
+    private List<LuuHoaDon> listLuuHoaDon = new ArrayList<>();
+
+    public static final String TAG  = "HistoryFragment";// Khởi tạo listLuuHoaDon
 
     ImageView btnBackLichSu;
 
@@ -33,11 +36,15 @@ public class HistoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
-        hoaDonAdapter = new LuuHoaDonAdapter(listLuuHoaDon);
 
         recyclerLichSu = view.findViewById(R.id.recyclerLichSu);
+
+        loadHoaDonData();
+
+        luuhoaDonAdapter = new LuuHoaDonAdapter(listLuuHoaDon);
+        Log.d(TAG, "onCreateView: " + listLuuHoaDon.size());
         recyclerLichSu.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerLichSu.setAdapter(hoaDonAdapter);
+        recyclerLichSu.setAdapter(luuhoaDonAdapter);
 
         btnBackLichSu = view.findViewById(R.id.btnBackLichSu);
         btnBackLichSu.setOnClickListener(new View.OnClickListener() {
@@ -47,21 +54,28 @@ public class HistoryFragment extends Fragment {
             }
         });
 
-        loadHoaDonData();
 
         return view;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void loadHoaDonData() {
         DAOLuuHD daoLuuHD = new DAOLuuHD(getContext());
         listLuuHoaDon.clear();
-        listLuuHoaDon.addAll(daoLuuHD.getAllHoaDon(2, 0));
+        listLuuHoaDon.addAll(daoLuuHD.getHDofMaHD(2));
+        Log.d("ListSize", "Size of listLuuHoaDon: " + listLuuHoaDon.toString());
+
         for (LuuHoaDon luuHoaDon : listLuuHoaDon) {
             if (luuHoaDon.getListGioHang() == null) {
                 luuHoaDon.setListGioHang(new ArrayList<>());
             }
         }
-        hoaDonAdapter.notifyDataSetChanged();
+        try {
+//            luuhoaDonAdapter.notifyDataSetChanged();
+        }
+        catch (Exception e){
+            Log.d(TAG, "loadHoaDonData: can not load data again " + e.getMessage());
+        }
     }
 
     private void loadFragment(Fragment fragment) {

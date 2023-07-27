@@ -77,6 +77,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "maSP INTEGER,\n" +
                 "tenSP TEXT,\n" +
                 "soLuong INTEGER,\n" +
+                "size TEXT,\n" +
                 "donGia DOUBLE\n," +
                 "thanhTien DOUBLE\n" +
                 ");";

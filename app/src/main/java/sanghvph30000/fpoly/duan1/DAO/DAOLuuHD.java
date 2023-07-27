@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
+import android.util.Log;
 
 
 import java.util.ArrayList;
@@ -38,6 +38,8 @@ public class DAOLuuHD {
         values.put("donGia", luuHoaDon.getDonGia());
         values.put("thanhTien", luuHoaDon.getThanhTien());
         long check = database.insert("LuuHoaDon", null, values);
+        Log.d("TAG", "addLuuHD: data insert " + values.toString() );
+        // b2 fix here
         if (check == -1){
             return false;
         }

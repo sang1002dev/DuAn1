@@ -38,7 +38,7 @@ public class AdapterThongTinHD extends RecyclerView.Adapter<AdapterThongTinHD.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         LuuHoaDon luuHoaDon = listHoaDon.get(position);
-        holder.txtHDTenSP.setText(luuHoaDon.getTenSP() + " (" + luuHoaDon.getSize() + ")");
+        holder.txtHDTenSP.setText(luuHoaDon.getTenSP() + " ");
         holder.txtHDSL.setText(luuHoaDon.getSoLuong() + "");
         double donGia = luuHoaDon.getDonGia();
         String outDonGia = String.format("%,.0f", donGia);

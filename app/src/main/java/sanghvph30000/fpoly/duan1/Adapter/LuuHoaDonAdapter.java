@@ -1,5 +1,6 @@
 package sanghvph30000.fpoly.duan1.Adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,8 @@ public class LuuHoaDonAdapter extends RecyclerView.Adapter<LuuHoaDonAdapter.HoaD
         holder.txtTrangThai.setText(trangThai);
 
         // Sử dụng AdapterHoaDon để hiển thị danh sách sản phẩm của mỗi hóa đơn
+        //fix here b1.
+        Log.d("TAG", "onBindViewHolder: " + luuHoaDon.getListGioHang().toString());
         AdapterHoaDon adapterHoaDon = new AdapterHoaDon(holder.itemView.getContext(), luuHoaDon.getListGioHang());
         holder.recycle_itemLS.setAdapter(adapterHoaDon);
     }
