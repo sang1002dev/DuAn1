@@ -6,13 +6,14 @@
     android:gravity="center"
     android:layout_marginLeft="30dp"
     android:layout_marginRight="30dp"
+    android:layout_marginBottom="10dp"
     >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/ct_dialog"
+        android:background="#94A93FB5"
         android:gravity="center_vertical"
         >
 
@@ -168,7 +169,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycle_donHang"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:padding="10dp" />
 
         <View
@@ -253,7 +254,6 @@
             android:layout_marginTop="15dp"
             >
 
-
             <Button
                 android:id="@+id/btnHoaDonXN1"
                 android:layout_width="150dp"
@@ -271,6 +271,7 @@
                 android:paddingRight="5dp"
                 android:editable="false"
                 android:focusable="false"
+                android:visibility="gone"
                 />
         </LinearLayout>
 

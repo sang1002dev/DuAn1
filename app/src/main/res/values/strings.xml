@@ -2,4 +2,9 @@
     <string name="app_name">DuAn1</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="trang_thai_array">
+        <item>Đang chờ xử lý</item>
+        <item>Đang giao hàng</item>
+        <item>Đã thanh toán</item>
+    </string-array>
 </resources>

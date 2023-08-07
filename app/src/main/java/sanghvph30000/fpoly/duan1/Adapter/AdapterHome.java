@@ -49,7 +49,7 @@ public class AdapterHome extends RecyclerView.Adapter<AdapterHome.ViewHolder>{
         Bitmap bitmap = BitmapFactory.decodeByteArray(productsImage, 0, productsImage.length);
         holder.itemSpHomeImg.setImageBitmap(bitmap);
         holder.itemSpHomeTen.setText(sanPham.getTenSanPham());
-        double gia = sanPham.getPrice();
+        double gia = sanPham.getDonGia();
         String giaFormatted = String.format("%,.0f VNĐ", gia);
         holder.itemSpHomeGia.setText(giaFormatted);
 

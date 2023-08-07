@@ -79,7 +79,7 @@ public class SuaSPFrgm extends Fragment {
         adapter = new AdapterSanPham(getActivity(), arrayList);
 
 //        Settext cho Edittext
-        edUpdateGiaBan.setText(sanPham.getPrice() + "");
+        edUpdateGiaBan.setText(sanPham.getDonGia() + "");
         edUpdateTenSP.setText(sanPham.getTenSanPham());
         maLoai = sanPham.getMaLoai();
         String tenLoai = "";
@@ -120,7 +120,7 @@ public class SuaSPFrgm extends Fragment {
         btnSuaSPHuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                edUpdateGiaBan.setText(sanPham.getPrice() + "");
+                edUpdateGiaBan.setText(sanPham.getDonGia() + "");
                 edUpdateTenSP.setText(sanPham.getTenSanPham());
                 maLoai = sanPham.getMaLoai();
                 String tenLoai = "";

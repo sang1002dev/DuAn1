@@ -15,7 +15,10 @@ public class GioHang {
         this.donGia = donGia;
     }
 
-    public GioHang(int maGioHang, int maSanPham, byte[] imgSP, String tenSP, int soLuong,  double donGia) {
+    public GioHang() {
+    }
+
+    public GioHang(int maGioHang, int maSanPham, byte[] imgSP, String tenSP, int soLuong, double donGia) {
         MaGioHang = maGioHang;
         this.maSanPham = maSanPham;
         this.imgSP = imgSP;

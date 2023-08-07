@@ -24,7 +24,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MaSanPham INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
                 "image BLOG,\n" +
                 "TenSanPham TEXT,\n" +
-                "Price double,\n" +
+                "DonGia double,\n" +
                 "MaLoai INTEGER REFERENCES THELOAI(maLoai),\n" +
                 "MoTa TEXT\n" +
                 ");");
@@ -54,7 +54,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MaUser INTEGER REFERENCES User(MaUser),\n" +
                 "TenKhachHang TEXT,\n" +
                 "NgayLapHD TEXT,\n" +
-                "TrangThai TEXT ,\n "+
+                "maSP TEXT ,\n "+
+                "tongTien INTEGER ,\n "+
                 "MaGioHang INTEGER REFERENCES GioHang(MaGioHang)\n" +
                 ");";
         db.execSQL(tableHoaDon);

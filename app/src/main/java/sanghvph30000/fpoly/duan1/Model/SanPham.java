@@ -4,7 +4,7 @@ public class SanPham {
     int id;
     byte [] image;
     String TenSanPham;
-    Double Price;
+    Double DonGia;
     int MaLoai;
     String Mota;
 
@@ -20,11 +20,11 @@ public class SanPham {
         this.id = id;
     }
 
-    public SanPham(int id, byte[] image, String tenSanPham, Double price, int maLoai, String mota) {
+    public SanPham(int id, byte[] image, String tenSanPham, Double donGia, int maLoai, String mota) {
         this.id = id;
         this.image = image;
         TenSanPham = tenSanPham;
-        Price = price;
+        DonGia = donGia;
         MaLoai = maLoai;
         Mota = mota;
     }
@@ -49,12 +49,12 @@ public class SanPham {
         TenSanPham = tenSanPham;
     }
 
-    public Double getPrice() {
-        return Price;
+    public Double getDonGia() {
+        return DonGia;
     }
 
-    public void setPrice(Double price) {
-        Price = price;
+    public void setDonGia(Double donGia) {
+        DonGia = donGia;
     }
 
     public int getMaLoai() {

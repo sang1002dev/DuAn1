@@ -1,5 +1,6 @@
 package sanghvph30000.fpoly.duan1.Adapter;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -15,9 +17,12 @@ import sanghvph30000.fpoly.duan1.Model.LuuHoaDon;
 import sanghvph30000.fpoly.duan1.R;
 
 public class LichSuAdapter extends RecyclerView.Adapter<LichSuAdapter.HoaDonViewHolder> {
-    private List<LuuHoaDon> listHoaDon;
 
-    public LichSuAdapter(List<LuuHoaDon> listHoaDon) {
+    private List<LuuHoaDon> listHoaDon;
+    private Context context;
+
+    public LichSuAdapter(List<LuuHoaDon> listHoaDon, Context context) {
+        this.context = context;
         this.listHoaDon = listHoaDon;
     }
 
@@ -25,7 +30,7 @@ public class LichSuAdapter extends RecyclerView.Adapter<LichSuAdapter.HoaDonView
     @Override
     public HoaDonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_lichsu, parent, false);
-        return new HoaDonViewHolder(view);
+        return new LichSuAdapter.HoaDonViewHolder(view);
     }
 
     @Override
@@ -41,7 +46,6 @@ public class LichSuAdapter extends RecyclerView.Adapter<LichSuAdapter.HoaDonView
 
         // Sử dụng AdapterHoaDon để hiển thị danh sách sản phẩm của mỗi hóa đơn
         //fix here b1.
-        Log.d("TAG", "onBindViewHolder: " + luuHoaDon.getListGioHang().toString());
         AdapterHoaDon adapterHoaDon = new AdapterHoaDon(holder.itemView.getContext(), luuHoaDon.getListGioHang());
         holder.recycle_itemLS.setAdapter(adapterHoaDon);
     }
@@ -60,8 +64,8 @@ public class LichSuAdapter extends RecyclerView.Adapter<LichSuAdapter.HoaDonView
             txtTenKhachHang = itemView.findViewById(R.id.txtLSTenKH);
             txtNgayBan = itemView.findViewById(R.id.txtLSNgayBan);
             txtTongTien = itemView.findViewById(R.id.txtLSTongTien);
-            txtTrangThai = itemView.findViewById(R.id.txtLSTrangThai);
             recycle_itemLS = itemView.findViewById(R.id.recycle_itemLS);
+            txtTrangThai = itemView.findViewById(R.id.txtLSTrangThai);
             // Không cần sử dụng LinearLayoutManager vì nó đã được sử dụng trong XML của item_lichsu
         }
     }

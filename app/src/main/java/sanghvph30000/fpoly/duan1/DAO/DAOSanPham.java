@@ -24,26 +24,26 @@ public class DAOSanPham {
         database = dbHelper.getReadableDatabase();
     }
 
-    public void insertData(byte[] image, String TenSanPham, double Price, int MaLoai, String MoTa) {
+    public void insertData(byte[] image, String TenSanPham, double DonGia, int MaLoai, String MoTa) {
         String sql = "INSERT INTO SanPham VALUES (NULL, ?,?,?,?,?)";
         SQLiteStatement statement = database.compileStatement(sql);
         statement.clearBindings();
 
         statement.bindBlob(1, image);
         statement.bindString(2, TenSanPham);
-        statement.bindDouble(3, Price);
+        statement.bindDouble(3, DonGia);
         statement.bindLong(4, MaLoai);
         statement.bindString(5, MoTa);
         statement.executeInsert();
     }
 
-    public void updateSanPham(byte[] image, String TenSanPham, double Price, int MaLoai, String MoTa, int id) {
+    public void updateSanPham(byte[] image, String TenSanPham, double DonGia, int MaLoai, String MoTa, int id) {
         String sql = "UPDATE SanPham SET image = ?, TenSanPham = ?, Price = ?, MaLoai = ?, MoTa = ? WHERE MaSanPham =?";
         SQLiteStatement statement = database.compileStatement(sql);
 
         statement.bindBlob(1, image);
         statement.bindString(2, TenSanPham);
-        statement.bindDouble(3, Price);
+        statement.bindDouble(3, DonGia);
         statement.bindLong(4, MaLoai);
         statement.bindString(5, MoTa);
         statement.bindDouble(6, (double) id);
@@ -68,7 +68,7 @@ public class DAOSanPham {
             sql = "SELECT * FROM SanPham";
         }
         if (rdoCheck == 1) {
-            sql = "SELECT * FROM SanPham ORDER BY Price ASC";
+            sql = "SELECT * FROM SanPham ORDER BY DonGia ASC";
         }
         if (rdoCheck == 2) {
             sql = "SELECT * FROM SanPham ORDER BY MaLoai ASC";
@@ -95,10 +95,10 @@ public class DAOSanPham {
             int id = cursor.getInt(0);
             byte[] image = cursor.getBlob(1);
             String name = cursor.getString(2);
-            double price = cursor.getDouble(3);
+            double DonGia = cursor.getDouble(3);
             int maLoai = cursor.getInt(4);
             String moTa = cursor.getString(5);
-            list.add(new SanPham(id, image, name, price, maLoai, moTa));
+            list.add(new SanPham(id, image, name, DonGia, maLoai, moTa));
         }
         return list;
     }

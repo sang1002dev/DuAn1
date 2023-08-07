@@ -46,6 +46,7 @@ public class StoreFrgm extends Fragment {
     DAOHoaDon daoHoaDon;
     DAOLuuHD daoLuuHD;
     ArrayList<GioHang> listGioHang;
+    ArrayList<LuuHoaDon> arrlhd = new ArrayList<>();
     public static TextView txtGHTongTien;
     double tongTien = 0;
     EditText edtGHTenKH,edtGHSDT, edtGHDiaChi;
@@ -191,58 +192,87 @@ public class StoreFrgm extends Fragment {
                         btnHoaDonXN.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-//                            Tạo Model HoaDon, Thêm vào bảng Lưu Hóa đơn
-                                HoaDon hoaDon = new HoaDon(maUser, tenKH, ngayTaoHD, 1);
-                                boolean check = daoHoaDon.addHoaDon(hoaDon);
-                                if (!check){
-                                    Toast.makeText(getContext(), "Fail!", Toast.LENGTH_SHORT).show();
-                                }
-                                ArrayList<HoaDon> listHoaDon = daoHoaDon.getHoaDon();
-                                int listHDSize = listHoaDon.size();
-//                            Lấy ra danh sách Hóa đơn
-                                if (listHDSize > 0){
-                                    boolean checkLuuHD = true;
-                                    for (int i = 0; i < listHDSize; i++) {
-                                        HoaDon hoaDonModel = listHoaDon.get(i);
-//                                    Tạo Model Lưu Hóa đơn
-                                        LuuHoaDon luuHoaDon = new LuuHoaDon(hoaDonModel.getMaHoaDon(),
-                                                hoaDonModel.getMaUser(),
-                                                hoaDonModel.getTenUser(),
-                                                hoaDonModel.getTenKhachHang(),
-                                                hoaDonModel.getNgayLapHD(),
-                                                hoaDonModel.getMaSP(),
-                                                hoaDonModel.getTenSP(),
-                                                hoaDonModel.getSoLuong(),
-                                                hoaDonModel.getDonGia(),
-                                                hoaDonModel.getThanhTien());
-//                                    Lưu hóa đơn vào bảng Lưu Hóa đơn
-                                        boolean checkAddHD = daoLuuHD.addLuuHD(luuHoaDon);
-                                        if (!checkAddHD){
-                                            Toast.makeText(getContext(), "Lưu HD Fail!", Toast.LENGTH_SHORT).show();
-                                            checkLuuHD = false;
-                                        }
-                                    }
-                                    if (checkLuuHD){
-//                                    Lưu hóa đơn thành công -> Xóa thông tin giỏ hàng, hóa đơn
-                                        int listGHSize = listHoaDon.size();
-                                        if (listGHSize != 0){
-                                            for (int i = 0; i < listGHSize; i++) {
-                                                daoGioHang.deleteGiohang(listGioHang.get(i));
-                                            }
-                                        }
-                                        if (listHDSize != 0){
-                                            for (int i = 0; i < listHDSize; i++) {
-                                                daoHoaDon.deleteHoaDon(listHoaDon.get(i));
-                                            }
-                                        }
-                                        createData();
-                                        Toast.makeText(getContext(), "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
+                                // Tạo Model HoaDon và thêm vào bảng Lưu Hóa đơn
+                                for (GioHang gioHang : listGioHang) {
+                                    int maGH = gioHang.getMaGioHang();
+                                    int maSP = gioHang.getMaSanPham();
+                                    double thanhTien = gioHang.getSoLuong() * gioHang.getDonGia();
+                                    String ten = gioHang.getTenSP();
+                                    double gia = gioHang.getDonGia();
+                                    int soLuong = gioHang.getSoLuong();
+
+                                    LuuHoaDon luuHoaDon = new LuuHoaDon();
+                                    luuHoaDon.setTenKhachHang(tenKH);
+                                    luuHoaDon.setSDT(soDT);
+                                    luuHoaDon.setDiaChi(diaChi);
+                                    luuHoaDon.setNgayLapHD(ngayTaoHD);
+                                    luuHoaDon.setListGioHang(listGioHang);
+                                    luuHoaDon.setMaSP(maSP);
+                                    luuHoaDon.setThanhTien(thanhTien);
+                                    luuHoaDon.setMaUser(1);
+
+                                    boolean checkAddHD = daoLuuHD.addLuuHD(luuHoaDon);
+
+                                    if (!checkAddHD) {
+                                        Toast.makeText(getContext(), "Fail!", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
                                         txtGHTongTien.setText("0 VNĐ");
                                         dialog.dismiss();
                                     }
                                 }
                             }
                         });
+
+
+//                                ArrayList<HoaDon> listHoaDon = daoHoaDon.getHoaDon();
+//                                int listHDSize = listHoaDon.size();
+////                            Lấy ra danh sách Hóa đơn
+//                                if (listHDSize > 0) {
+//                                    boolean checkLuuHD = true;
+//                                    for (int i = 0; i < listHDSize; i++) {
+//                                        HoaDon hoaDonModel = listHoaDon.get(i);
+////                                    Tạo Model Lưu Hóa đơn
+//                                        LuuHoaDon luuHoaDon = new LuuHoaDon();
+//                                        luuHoaDon.setTenKhachHang(hoaDonModel.getTenKhachHang());
+//                                        luuHoaDon.setSDT(soDT);
+//                                        luuHoaDon.setDiaChi(diaChi);
+//                                        luuHoaDon.setNgayLapHD(hoaDonModel.getNgayLapHD());
+//                                        luuHoaDon.setMaSP(hoaDonModel.getMaSP());
+//                                        luuHoaDon.setThanhTien(hoaDonModel.getThanhTien());
+//                                        luuHoaDon.setTenSP(hoaDonModel.getTenSP());
+//                                        luuHoaDon.setMaUser(1);
+////                                        luuHoaDon.setListGioHang(listGioHang);//                                    Lưu hóa đơn vào bảng Lưu Hóa đơn
+//                                        boolean checkAddHD = daoLuuHD.addLuuHD(luuHoaDon);
+//                                        if (!checkAddHD) {
+//                                            Toast.makeText(getContext(), "Lưu HD Fail!", Toast.LENGTH_SHORT).show();
+//                                            checkLuuHD = false;
+//                                        }
+//                                    }
+//                                    if (checkLuuHD){
+////                                    Lưu hóa đơn thành công -> Xóa thông tin giỏ hàng, hóa đơn
+//                                        int listGHSize = listHoaDon.size();
+//                                        if (listGHSize != 0){
+//                                            for (int i = 0; i < listGHSize; i++) {
+//                                                daoGioHang.deleteGiohang(listGioHang.get(i));
+//                                            }
+//                                        }
+//                                        if (listHDSize != 0){
+//                                            for (int i = 0; i < listHDSize; i++) {
+//                                                daoHoaDon.deleteHoaDon(listHoaDon.get(i));
+//                                            }
+//                                        }
+//                                        createData();
+//                                        Toast.makeText(getContext(), "Đặt hàng thành công!" + listGioHang.size(), Toast.LENGTH_SHORT).show();
+//                                    arrlhd = daoLuuHD.getAllHoaDon();
+//                                    Toast.makeText(getContext(), ""+arrlhd.size() , Toast.LENGTH_SHORT).show();
+////                                        txtGHTongTien.setText("0 VNĐ");
+//                                        dialog.dismiss();
+////                                    }
+////                                }
+
+
+
                         dialog.show();
                     }
                 }
@@ -250,6 +280,9 @@ public class StoreFrgm extends Fragment {
         });
 
         return view;
+    }
+    public ArrayList<GioHang> getListGioHang() {
+        return listGioHang;
     }
 
     private void createData() {

@@ -19,7 +19,7 @@ import sanghvph30000.fpoly.duan1.R;
 public class AdapterHoaDon extends RecyclerView.Adapter<AdapterHoaDon.ViewHolder>{
 
     private Context context;
-    private ArrayList<GioHang> list;
+    private ArrayList<GioHang> list = new ArrayList<>();
     DAOGioHang daoGioHang;
 
     public AdapterHoaDon(Context context, ArrayList<GioHang> list) {

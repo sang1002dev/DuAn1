@@ -24,13 +24,13 @@ public class LuuHoaDon {
     ArrayList<GioHang> listGioHang;
 
 
-    public LuuHoaDon(int maLuu, int maHoaDon, String tenUser, String tenKhachHang,String SDT, String DiaChi, String trangThai, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
+    public LuuHoaDon(int maLuu, int maHoaDon,int maUser, String tenUser, String tenKhachHang,String SDT, String DiaChi, String trangThai, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
         this.maLuu = maLuu;
         this.maHoaDon = maHoaDon;
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.tenKhachHang = tenKhachHang;
-        this.trangThai = "Đang xử lý";
+        this.trangThai = trangThai;
         this.NgayLapHD = NgayLapHD;
         this.SDT = SDT;
         this.DiaChi = DiaChi;
@@ -41,6 +41,19 @@ public class LuuHoaDon {
         this.donGia = donGia;
         this.thanhTien = thanhTien;
         this.listGioHang = new ArrayList<>();
+    }
+
+    public LuuHoaDon() {
+    }
+
+    public LuuHoaDon(int maLuu, String tenKhachHang, String ngayLapHD, String SDT, String diaChi, int maSP, double thanhTien) {
+        this.maLuu = maLuu;
+        this.tenKhachHang = tenKhachHang;
+        NgayLapHD = ngayLapHD;
+        this.SDT = SDT;
+        DiaChi = diaChi;
+        this.maSP = maSP;
+        this.thanhTien = thanhTien;
     }
 
     public LuuHoaDon(int maLuu, int maHoaDon, String tenKhachHang, double thanhTien) {
@@ -242,10 +255,14 @@ public class LuuHoaDon {
     }
 
     public ArrayList<GioHang> getListGioHang() {
+        if (listGioHang == null) {
+            listGioHang = new ArrayList<>();
+        }
         return listGioHang;
     }
 
     public void setListGioHang(ArrayList<GioHang> listGioHang) {
         this.listGioHang = listGioHang;
     }
+
 }

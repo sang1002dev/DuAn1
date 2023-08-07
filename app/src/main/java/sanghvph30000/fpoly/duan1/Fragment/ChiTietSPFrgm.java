@@ -120,7 +120,7 @@ public class ChiTietSPFrgm extends Fragment {
 
 //        Set Data cho các View
         txtChiTietTenSp.setText(sanPham.getTenSanPham());
-        donGia = sanPham.getPrice();
+        donGia = sanPham.getDonGia();
         String mGiaSP = String.format("%,.0f", donGia);
         txtChiTietGiaSP.setText(mGiaSP + " VNĐ");
         txtChiTietMoTaSP.setText(sanPham.getMota());

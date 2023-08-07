@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sanghvph30000.fpoly.duan1.Adapter.DonHangAdapter;
-import sanghvph30000.fpoly.duan1.Adapter.LichSuAdapter;
 import sanghvph30000.fpoly.duan1.DAO.DAOLuuHD;
+import sanghvph30000.fpoly.duan1.Model.GioHang;
 import sanghvph30000.fpoly.duan1.Model.LuuHoaDon;
 import sanghvph30000.fpoly.duan1.R;
 
@@ -26,8 +26,10 @@ public class DonHangFragment extends Fragment {
     private RecyclerView recyclerDonHang;
     private DonHangAdapter donHangAdapter;
     private List<LuuHoaDon> listLuuHoaDon = new ArrayList<>();
-    public static final String TAG  = "HistoryFragment";
+    private  List<String> temTrangThaiList = new ArrayList<>();
+    public static final String TAG = "DonHangFragment";
     ImageView btnBackDonHang;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,46 +37,66 @@ public class DonHangFragment extends Fragment {
 
         recyclerDonHang = view.findViewById(R.id.recyclerDonHang);
 
-        loadHoaDonData();
-
-        donHangAdapter = new DonHangAdapter(listLuuHoaDon);
+        // Tạo mới đối tượng DonHangAdapter và gán nó cho biến donHangAdapter
+        List<String> trangThaiList = new ArrayList<>();
+        // Thêm danh sách trạng thái trống để tránh lỗi
+        donHangAdapter = new DonHangAdapter(listLuuHoaDon, trangThaiList,temTrangThaiList);
 
         recyclerDonHang.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerDonHang.setAdapter(donHangAdapter);
 
-        btnBackDonHang = view.findViewById(R.id.btnBackDonHang);
-        btnBackDonHang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new Account_Fragment());
-            }
-        });
+        loadHoaDonData();
+
         return view;
     }
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        // Gán lại trạng thái từ List tạm thời vào List trạng thái chính
+//        trangThaiList.clear();
+//        trangThaiList.addAll(tempTrangThaiList);
+//        // Thông báo cho adapter rằng dữ liệu đã thay đổi để cập nhật RecyclerView
+//        donHangAdapter.notifyDataSetChanged();
+//    }
+
     @SuppressLint("NotifyDataSetChanged")
     private void loadHoaDonData() {
         DAOLuuHD daoLuuHD = new DAOLuuHD(getContext());
         listLuuHoaDon.clear();
-        listLuuHoaDon.addAll(daoLuuHD.getHDofMaHD(2));
-        Log.d("ListSize", "Size of listLuuHoaDon: " + listLuuHoaDon.toString());
+        listLuuHoaDon.addAll(daoLuuHD.getAllHoaDon());
 
+        List<String> trangThaiList = new ArrayList<>();
+        for (LuuHoaDon hoaDon : listLuuHoaDon) {
+            trangThaiList.add(hoaDon.getTrangThai());
+        }
+
+        // Cập nhật danh sách trạng thái cho Adapter
+        donHangAdapter.setTrangThaiList(trangThaiList);
+        Log.d(TAG, "Size of listLuuHoaDon: " + listLuuHoaDon.size());
+
+        // Thêm kiểm tra null và khởi tạo listGioHang nếu cần thiết
         for (LuuHoaDon luuHoaDon : listLuuHoaDon) {
             if (luuHoaDon.getListGioHang() == null) {
                 luuHoaDon.setListGioHang(new ArrayList<>());
             }
         }
-        try {
-//            luuhoaDonAdapter.notifyDataSetChanged();
-        }
-        catch (Exception e){
-            Log.d(TAG, "loadHoaDonData: can not load data again " + e.getMessage());
+        for (LuuHoaDon luuHoaDon : listLuuHoaDon) {
+            ArrayList<GioHang> gioHangList = luuHoaDon.getListGioHang();
+            if (gioHangList == null) {
+                gioHangList = new ArrayList<>();
+                luuHoaDon.setListGioHang(gioHangList);
+            }
         }
     }
+
     private void loadFragment(Fragment fragment) {
-        FragmentTransaction transaction = (getActivity()).getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
-}
 
+
+
+}

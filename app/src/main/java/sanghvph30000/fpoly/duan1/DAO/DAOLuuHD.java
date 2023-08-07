@@ -1,5 +1,6 @@
 package sanghvph30000.fpoly.duan1.DAO;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -162,6 +163,36 @@ public class DAOLuuHD {
         }
         return listHD;
     }
+    @SuppressLint("Range")
+    public ArrayList<LuuHoaDon> getAllHoaDon1(int maUserInput){
+        ArrayList<LuuHoaDon> listHoaDon = new ArrayList<>();
+        String sql = "SELECT * FROM LuuHoaDon where MaUser = ?";
+        Cursor cursor = database.rawQuery(sql, new String[]{String.valueOf(maUserInput)});
+        if (cursor.moveToFirst()) {
+            do {
+                int maLuu = cursor.getInt(cursor.getColumnIndex("maLuu"));
+                int maHoaDon = cursor.getInt(cursor.getColumnIndex("MaHoaDon"));
+                int maUser = cursor.getInt(cursor.getColumnIndex("MaUser"));
+                String tenUser = cursor.getString(cursor.getColumnIndex("tenUser"));
+                String tenKhachHang = cursor.getString(cursor.getColumnIndex("tenKhachHang"));
+                String ngayLapHD = cursor.getString(cursor.getColumnIndex("NgayLapHD"));
+                String sdt = cursor.getString(cursor.getColumnIndex("SDT"));
+                String diaChi = cursor.getString(cursor.getColumnIndex("DiaChi"));
+                int maSP = cursor.getInt(cursor.getColumnIndex("maSP"));
+                String tenSP = cursor.getString(cursor.getColumnIndex("tenSP"));
+                int soLuong = cursor.getInt(cursor.getColumnIndex("soLuong"));
+                String size = cursor.getString(cursor.getColumnIndex("size"));
+                double donGia = cursor.getDouble(cursor.getColumnIndex("donGia"));
+                double thanhTien = cursor.getDouble(cursor.getColumnIndex("thanhTien"));
+                String trangThai = cursor.getString(cursor.getColumnIndex("TrangThai"));
+
+                listHoaDon.add(new LuuHoaDon(maLuu,tenKhachHang,ngayLapHD,sdt,diaChi,maSP,thanhTien));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return listHoaDon;
+    }
 
 //    Lấy hóa đơn theo mã hóa đơn
     public ArrayList<LuuHoaDon> getHDofMaHD(int maHD){
@@ -209,4 +240,35 @@ public class DAOLuuHD {
         }
         return listMaSP;
     }
+    @SuppressLint("Range")
+    public ArrayList<LuuHoaDon> getAllHoaDon() {
+        ArrayList<LuuHoaDon> listHoaDon = new ArrayList<>();
+
+        Cursor cursor = database.rawQuery("SELECT * FROM LuuHoaDon;", null);
+        if (cursor.moveToFirst()) {
+            do {
+                int maLuu = cursor.getInt(cursor.getColumnIndex("maLuu"));
+                int maHoaDon = cursor.getInt(cursor.getColumnIndex("MaHoaDon"));
+                int maUser = cursor.getInt(cursor.getColumnIndex("MaUser"));
+                String tenUser = cursor.getString(cursor.getColumnIndex("tenUser"));
+                String tenKhachHang = cursor.getString(cursor.getColumnIndex("tenKhachHang"));
+                String ngayLapHD = cursor.getString(cursor.getColumnIndex("NgayLapHD"));
+                String sdt = cursor.getString(cursor.getColumnIndex("SDT"));
+                String diaChi = cursor.getString(cursor.getColumnIndex("DiaChi"));
+                int maSP = cursor.getInt(cursor.getColumnIndex("maSP"));
+                String tenSP = cursor.getString(cursor.getColumnIndex("tenSP"));
+                int soLuong = cursor.getInt(cursor.getColumnIndex("soLuong"));
+                String size = cursor.getString(cursor.getColumnIndex("size"));
+                double donGia = cursor.getDouble(cursor.getColumnIndex("donGia"));
+                double thanhTien = cursor.getDouble(cursor.getColumnIndex("thanhTien"));
+                String trangThai = cursor.getString(cursor.getColumnIndex("TrangThai"));
+
+                listHoaDon.add(new LuuHoaDon(maLuu,tenKhachHang,ngayLapHD,sdt,diaChi,maSP,thanhTien));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return listHoaDon;
+    }
+
 }

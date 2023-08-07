@@ -33,6 +33,9 @@ public class HistoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
         recyclerLichSu = view.findViewById(R.id.recyclerLichSu);
+
+
+
         btnBackLichSu = view.findViewById(R.id.btnBackLichSu);
 
         btnBackLichSu.setOnClickListener(new View.OnClickListener() {
@@ -42,9 +45,7 @@ public class HistoryFragment extends Fragment {
             }
         });
 
-        lichSuAdapter = new LichSuAdapter(listLuuHoaDon);
-        recyclerLichSu.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerLichSu.setAdapter(lichSuAdapter);
+
 
         loadHoaDonData();
 
@@ -53,9 +54,11 @@ public class HistoryFragment extends Fragment {
 
     private void loadHoaDonData() {
         DAOLuuHD daoLuuHD = new DAOLuuHD(getContext());
-        listLuuHoaDon.clear();
-        listLuuHoaDon.addAll(daoLuuHD.getHDofMaHD(2));
+        listLuuHoaDon = daoLuuHD.getAllHoaDon1(1);
+        lichSuAdapter = new LichSuAdapter(listLuuHoaDon,getContext());
         lichSuAdapter.notifyDataSetChanged();
+        recyclerLichSu.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerLichSu.setAdapter(lichSuAdapter);
     }
 
     private void loadFragment(Fragment fragment) {

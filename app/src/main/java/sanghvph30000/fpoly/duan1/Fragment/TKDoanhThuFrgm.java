@@ -53,7 +53,6 @@ public class TKDoanhThuFrgm extends Fragment {
     RecyclerView recycler_TKDT;
     ArrayList<LuuHoaDon> listHD = new ArrayList<>();
 
-
     LinearLayout boxTenNV, layoutListDT;
     DAOUser daoUser;
     int quyenNow, maUserInput, maUserNow, rdoCheck, caseTK;

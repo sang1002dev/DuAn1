@@ -24,6 +24,16 @@ public class HoaDon {
         this.maGiohang = maGiohang;
     }
 
+    public HoaDon(int maUser, String tenKhachHang, String ngayLapHD, int maGiohang, int maSP,double thanhTien) {
+        this.maUser = maUser;
+        this.tenKhachHang = tenKhachHang;
+        NgayLapHD = ngayLapHD;
+        this.maGiohang = maGiohang;
+        this.maSP = maSP;
+        this.thanhTien = thanhTien;
+    }
+
+
     public HoaDon(int maHoaDon, int maUser, String tenUser, String tenKhachHang, String ngayLapHD, int maSP, String tenSP, int soLuong, double donGia, double thanhTien) {
         this.maHoaDon = maHoaDon;
         this.maUser = maUser;
